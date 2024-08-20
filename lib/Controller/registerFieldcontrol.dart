@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myshop/Model/register_signin_classes.dart';
 import 'package:myshop/Model/user.dart';
+import 'package:myshop/View/homepage.dart';
 
 
 class register extends StatefulWidget{
@@ -151,11 +152,10 @@ class _RegisterState extends State<register>{
                     else{
                       print(result.uid);
                       print(result.email);
-                      
-                         /* Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => userhome()),
-            );*/
+                       Navigator.pushReplacement(
+                          context,
+              MaterialPageRoute(builder: (context) => const Homepage()),
+            );
                     }
                   }
                 }

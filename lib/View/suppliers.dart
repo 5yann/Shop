@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:myshop/Controller/supplierContoller.dart';
-import 'package:myshop/Model/supplier_bill_client.dart';
 
 class Supplierlist extends StatelessWidget {
   const Supplierlist({super.key});

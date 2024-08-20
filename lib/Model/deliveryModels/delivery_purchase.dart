@@ -70,29 +70,6 @@ class Delivery{
   }
 }
 
-class Purchase{
-final String id;
-double price ;
-final String providerId;
-Purchase({required this.id, required this.price,required this.providerId});
-
-  Map<String, dynamic> toMap() {
-    return {
-     'id':id,
-     'price':price,
-     'providerId':providerId,
-    };
-  }
-
-   factory Purchase.fromDocument(DocumentSnapshot doc) {
-    return Purchase(
-      id: doc.id,
-      price: doc['price'],
-      providerId:doc['providerId'],
-    );
-  }
-}
-
 
   InkWell inkWellDelivery(BuildContext context,String S){
 
@@ -180,113 +157,8 @@ Purchase({required this.id, required this.price,required this.providerId});
           );
   }
 
- /* void toggleSelectionMode(Function setState, bool isSelectionMode) {
-  setState(() {
-    isSelectionMode = !isSelectionMode;
-  });
-}
-  void onItemSelect(Function setState,bool? selected, String title,Set<String> selectedItems) {
-    setState(() {
-      if (selected != null && selected) {
-        selectedItems.add(title);
-      } else {
-        selectedItems.remove(title);
-      }
-    });
-  }
 
-   void deleteSelectedItems(Function setState,List<Delivery>items,Set<String> selectedItems,bool isSelectionMode) {
-    setState(() {
-      items.removeWhere((item) => selectedItems.contains(item.title));
-      selectedItems.clear();
-      isSelectionMode = true;
-    });
-  }
-
-AppBar appBard(Color c,String s, BuildContext context,Function(void Function()) setState,bool isSelectionMode,List<Delivery>items,Set<String> selectedItems){
-  return AppBar(
-        backgroundColor: c,
-        title: Text(s),
-        actions: [
-          if (isSelectionMode)
-            IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed:(){
-                  setState(() {
-              items.removeWhere((item) => selectedItems.contains(item.title));
-              selectedItems.clear();
-              isSelectionMode = false;
-            });
-              } 
-            ),
-          IconButton(
-            icon: Icon(isSelectionMode ? Icons.cancel : Icons.format_list_bulleted_rounded),
-            onPressed: (){
-              setState(() {
-            isSelectionMode = !isSelectionMode;
-            if (!isSelectionMode) {
-              selectedItems.clear();
-            }
-          });
-              
-            }
-          ),
-        ],
-      );
-}
-
-ListView listViewd(Function setState,List<Delivery>items,Set<String> selectedItems,bool isSelectionMode){
-
-  return ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(items[index].title),
-            leading: isSelectionMode
-                ? Checkbox(
-                    value: selectedItems.contains(items[index].title),
-                    onChanged: (bool? selected) {
-                      onItemSelect(setState,selected, items[index].title,selectedItems);
-                    },
-                  )
-                : null,
-            onTap: () {
-              if (isSelectionMode) {
-                onItemSelect( setState,!selectedItems.contains(items[index].title), items[index].title,selectedItems);
-              }
-            },
-          );
-        },
-      );
-}
-
-BottomAppBar bottomAppBard(Function setStateCallback,bool isSelectionMode,int x){
-
-  return   BottomAppBar(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '$x item(s) selected',
-                      style:const  TextStyle(fontSize: 18),
-                    ),
-                    TextButton(
-                      onPressed:(){
-                          toggleSelectionMode(setStateCallback,isSelectionMode);
-                           },
-                      child:const  Text(
-                        'CANCEL',
-                        style: TextStyle(color: Colors.red, fontSize: 18),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-}
-*/
+  
 Card deliverydetails(Delivery D, BuildContext context){
   return Card(
       shadowColor:Colors.black87 ,

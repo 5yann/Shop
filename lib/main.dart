@@ -6,6 +6,7 @@ import 'package:myshop/Providers/clientListProvider.dart';
 import 'package:myshop/Providers/deliveriesSelectionmodeNotifier.dart';
 import 'package:myshop/Providers/global_sells_graph_provider.dart';
 import 'package:myshop/Providers/itemsProvider.dart';
+import 'package:myshop/Providers/purchase_Provider.dart';
 import 'package:myshop/Providers/supplierListProvider.dart';
 import 'package:myshop/View/welcome.dart';
 import 'package:myshop/firebase_options.dart';
@@ -26,7 +27,8 @@ void main() async{
         ChangeNotifierProvider(create: (context)=>Supplierlistprovider()),
         ChangeNotifierProvider(create: (context)=>Clientlistprovider()),
         ChangeNotifierProvider(create: (context)=>Deliveriesprovider()),
-        ChangeNotifierProvider(create: (context)=>SelectionModeNotifier())
+        ChangeNotifierProvider(create: (context)=>SelectionModeNotifier()),
+         ChangeNotifierProvider(create: (context)=>Purchase_Provider())
       ],
       child: const MyApp(),
     ),

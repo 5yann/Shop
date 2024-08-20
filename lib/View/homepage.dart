@@ -3,10 +3,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:myshop/Controller/home/homepagecontroller.dart';
+import 'package:myshop/Controller/purchase_Controller.dart';
 import 'package:myshop/Model/deliveryModels/delivery_purchase.dart';
 //import 'package:myshop/Controller/global_sell_graph_controller.dart';
 import 'package:myshop/Model/homepagewidgets.dart';
 import 'package:myshop/Model/supplier_bill_client.dart';
+
+import '../Controller/supplierContoller.dart';
 
 class Homepage extends StatefulWidget{
   const Homepage({super.key});
@@ -48,7 +51,7 @@ appBar: homepageAppBar(),
               Row(
                 
                 children: [ 
-                  Expanded(child:inkWell('Orders')),
+                  Expanded(child:inkWellPurchase(context,'Purchases')),
                   Expanded(child:inkWellDelivery(context,'Deliveries')),        
                 ],
               ),
